@@ -59,11 +59,11 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML;
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
     button.addEventListener('click', () => {
-      const productId = button.dataset.productId;
+      const {productId} = button.dataset;
       let matchingItem = cart.find(item => item.productId === productId);
       const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
-      const quantity = parseInt(quantitySelector.value);
-
+      const quantity = Number(quantitySelector.value);
+      // let cartQuantity = 0;
       if (matchingItem) {
         matchingItem.quantity += quantity;
       } else {
