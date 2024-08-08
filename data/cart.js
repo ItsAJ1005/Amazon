@@ -16,7 +16,8 @@ export function addToCart(productId){
     let matchingcartItem = cart.find(cartItem => cartItem.productId === productId);
   
     const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
-    const quantity = Number(quantitySelector.value);
+    const quantity = parseInt(quantitySelector.value);
+    console.log(quantity);
   
     // let cartQuantity = 0;
     if (matchingcartItem) {

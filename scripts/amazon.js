@@ -2,6 +2,10 @@ import {cart, addToCart} from "../data/cart.js"
 import {products} from "../data/products.js"
 
 
+document.addEventListener('DOMContentLoaded', ()=>{
+  updateCartQuantity();
+})
+
 let productsHTML = '';
 
 products.forEach((product) => {
@@ -28,9 +32,9 @@ products.forEach((product) => {
         ₹${(product.priceCents)}
       </div>
 
-      <div class="product-quantity-container">
-        <select>
-          <option selected value="1" class="js-quantity-selector-${product.id}">1</option>
+      <div class="product-quantity-container ">
+        <select class="js-quantity-selector-${product.id}">
+          <option selected value="1" >1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
