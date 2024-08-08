@@ -1,5 +1,9 @@
 import {cart, removeFromCart} from '../data/cart.js';
 import {products} from '../data/products.js';
+import  dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
+
+const today = dayjs();
+let deliveryDate = today.add(7, 'days');
 
 let cartSummaryHTML = '';
 
@@ -37,7 +41,7 @@ cart.forEach((cartItem) => {
             <span>
               Quantity: <span class="quantity-label">${cartItem.quantity}</span>
             </span>
-            <span class="update-quantity-link link-primary">
+            <span class="update-quantity-link link-primary js-update-quantity">
               Update
             </span>
             <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
@@ -122,3 +126,9 @@ cart.forEach((cartItem) => {
 
 document.querySelector('.js-checkout-items')
   .innerHTML = `Checkout ${cartQuantity} items`;
+
+
+let updateElem = document.querySelector('.js-update-quantity');
+updateElem.addEventListener('click', ()=> {
+
+})
