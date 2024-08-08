@@ -5,9 +5,9 @@ import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js'
 import {renderPaymentSummary} from './paymentSummary.js';
 
 import {
-  calculateCartQuantity,
+
   updateQuantity
-} from '../data/cart.js';
+} from '../../data/cart.js';
 
 export function renderOrderSummary() {
   let cartSummaryHTML = '';
