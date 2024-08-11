@@ -5,7 +5,6 @@ import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js'
 import {renderPaymentSummary} from './paymentSummary.js';
 
 import {
-
   updateQuantity
 } from '../../data/cart.js';
 
